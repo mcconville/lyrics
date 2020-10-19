@@ -18,7 +18,7 @@ class Bandpic extends HTMLElement {
 
     async connectedCallback(){
 
-        let res = await fetch( './components/bandpic.html' )
+        let res = await fetch( 'https://mcconville.github.io/lyrics/components/bandpic.html' )
         this.shadowRoot.innerHTML = await res.text()
 
         console.log(this.shadowRoot.innerHTML);
