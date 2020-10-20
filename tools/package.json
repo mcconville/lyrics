@@ -1,0 +1,19 @@
+{
+  "name": "MacMillerLyrics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.16.4",
+    "ibm-watson": "latest",
+    "log4js": "^6.1.0",
+    "genius-lyrics-api": "3.0.3"
+  },
+  "repository": {},
+  "engines": {
+    "node": "12.x"
+  }
+}
