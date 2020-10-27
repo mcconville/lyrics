@@ -173,17 +173,18 @@ padding-left: 20px;
 }
 
 .frame{
-    display: flex;
+    display: grid;
     flex-direction: row;
     justify-content: center;
     width:100%;
+    grid-gap:28px;
+    grid-template-columns: 486px 486px;
 }
 
 .bandpics{
     display: flex;
     flex-direction: column;
     width:485px;
-    margin-right:15px;
     background:white;
 }
 
@@ -191,7 +192,6 @@ padding-left: 20px;
     display: flex;
     flex-direction: column;
     width:485;
-    margin-left:15px;
     background: white;
 }
 
@@ -294,9 +294,8 @@ padding-left: 20px;
     }    
     
     .frame{
-        display: flex;
-        flex-direction: column;
-        width:100%;
+        grid-gap:28px;
+        grid-template-columns: 100%;
     }
 
     .keen-slider{
@@ -317,7 +316,6 @@ padding-left: 20px;
 
     .traitsection{
         width:100%;
-        margin-left:0;
     }
     
     .banner{
@@ -393,8 +391,8 @@ padding-left: 20px;
     }  
 
     .frame{
-        display: flex;
-        flex-direction: column;
+        grid-gap:28px;
+        grid-template-columns: 100%;
     }
 
     .keen-slider{
@@ -415,7 +413,6 @@ padding-left: 20px;
 
     .traitsection{
         width:100%;
-        margin-left:0;
     }
 
 
