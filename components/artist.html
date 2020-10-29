@@ -1,17 +1,14 @@
+<!-- template id="bandpic" -->
 <html>
-
 <head>
     <title>Mac Miller lyric analysis | Psychology of lyrics</title>
-    <!-- <link rel="stylesheet" href="./style/style.css"> -->
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://mcconville.github.io/lyrics/style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@4.1.3/keen-slider.min.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <script src="./logic/logic.js"></script>
-    
+    <script src="https://mcconville.github.io/lyrics/logic/logic.js"></script>
 </head>
-
 <body onload="initialize()">
     <div id="container" class="container">
         <section class="banner">
@@ -25,10 +22,22 @@
             </div>
         </section>
         <div class="frame">
-
-            <bandpic-element id="bandpics"></bandpic-element>
-           
-
+            <div class="bandpics">
+                <section class="drawings">
+                    <section class="beatles">
+                        <label id="eralabel" class="headinglabel">Psychedelia: 1967 - 1969</label>
+                    </section>
+                    <div id="my-keen-slider" class="keen-slider"></div>
+                    <div id="dots" class="dots"></div>
+                </section>
+                <section class="heading">
+                    <label id="headinglabel" class="headinglabel">BACKGROUND</label>
+                </section>
+                <section class="background">
+                    <label id="moodlabel" class="moodlabel"></label>
+                    <section class="blurb" id="blurb"></section>
+                </section>
+            </div>
             <div class="traitsection">
                 <section class="heading">
                     <label class="headinglabel">Big 5 Psychology Traits </label>
@@ -44,18 +53,6 @@
                     <datablock-element id='Emotional range' trait="EMOTIONAL RANGE" value=88></datablock-element>
                     </datablock-element>
                 </section>
-
-            </div>
-            <div>
-                <section class="heading">
-                    <label id="headinglabel" class="headinglabel">BACKGROUND</label>
-                </section>
-                <section class="background">
-                    <label id="moodlabel" class="moodlabel"></label>
-                    <section class="blurb" id="blurb"></section>
-                </section>
-            </div>
-            <div class=traitsection>
                 <section class="heading">
                     <label class="headinglabel">Albums</label>
                 </section>
@@ -66,7 +63,8 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/keen-slider@4.1.3/keen-slider.min.js"></script>
-<script src="./components/bandpic.js"></script>
-<script src="./components/datablock.js"></script>
-<script src="./logic/siema.js"></script>
+<script src="https://mcconville.github.io/lyrics/components/bandpic.js"></script>
+<script src="https://mcconville.github.io/lyrics/components/datablock.js"></script>
+
 </html>
+<!-- /template -->

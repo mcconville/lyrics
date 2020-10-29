@@ -45,13 +45,16 @@ class Datablock extends HTMLElement {
 
         if (name == 'value') {
             this.percentage = sr.getElementById('percentage');
-            this.percentage.innerHTML = newValue + '%';
 
-            this.score = sr.getElementById('score');
-            this.score.style.width = newValue + '%';
+            if(this.percentage){
+                this.percentage.innerHTML = newValue + '%';
 
-            this.gap = sr.getElementById('gap');
-            this.gap.style.width = (100-newValue) + '%';
+                this.score = sr.getElementById('score');
+                this.score.style.width = newValue + '%';
+
+                this.gap = sr.getElementById('gap');
+                this.gap.style.width = (100-newValue) + '%';
+            }
         }        
     }
 }

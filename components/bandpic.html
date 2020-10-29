@@ -3,14 +3,122 @@
     .pic {
         display: flex;
         place-content: center;
-        background:white;
+        background: white;
     }
 
     .bandpic {
         width: 100%;
     }
+
+    .bandpics {
+        display: flex;
+        flex-direction: column;
+        width: 485px;
+        background: white;
+    }
+
+    .drawings {
+        /* height: 1000px; */
+    }
+
+    .beatles {
+        display: flex;
+        flex-direction: row;
+        background: var(--lyrics-analysis-secondary-color);
+        width: 100%;
+        height: 30px;
+        align-content: center;
+        margin-top: 0;
+        align-items: center;
+        /* margin-bottom: 20px; */
+    }
+
+    .headinglabel {
+        margin-left: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--lyrics-analysis-ink-color);
+        text-transform: uppercase;
+    }
+
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        .bandpics {
+            width: 100%;
+        }
+
+        .heading {
+            height: 120px;
+        }
+
+
+        .headinglabel {
+            margin-left: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--lyrics-analysis-ink-color);
+            text-transform: uppercase;
+        }
+
+        .beatles {
+            display: flex;
+            flex-direction: row;
+            background: var(--lyrics-analysis-secondary-color);
+            width: 100%;
+            height: 100px;
+            align-content: center;
+            margin-top: 0;
+            align-items: center;
+            /* margin-bottom: 20px; */
+        }
+    }
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+        .bandpics {
+            width: 100%;
+        }
+
+        .heading {
+            height: 120px;
+        }
+
+
+        .headinglabel {
+            margin-left: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--lyrics-analysis-ink-color);
+            text-transform: uppercase;
+        }
+
+        .beatles {
+            display: flex;
+            flex-direction: row;
+            background: var(--lyrics-analysis-secondary-color);
+            width: 100%;
+            height: 100px;
+            align-content: center;
+            margin-top: 0;
+            align-items: center;
+            /* margin-bottom: 20px; */
+        }
+    }
 </style>
-<section class="pic">
-    <img id="band" class="bandpic" src="">
-</section>
+
+<div class="bandpics">
+    <section class="drawings">
+        <section class="beatles">
+            <label id="eralabel" class="headinglabel">Psychedelia: 1967 - 1969</label>
+        </section>
+        <div id="siema" class="siema">
+            <!-- <div><img src="images/SVG/blueslidepark.svg"></div>
+            <div><img src="images/SVG/divinefeminine.svg"></div>
+            <div><img src="images/SVG/goodam.svg"></div>
+            <div><img src="images/SVG/swimming.svg"></div>
+            <div><img src="images/SVG/circles.svg"></div> -->
+        </div>
+        <!-- <div id="my-keen-slider" class="keen-slider"></div>
+        <div id="dots" class="dots"></div> -->
+    </section>
+</div>
 <!-- /template -->

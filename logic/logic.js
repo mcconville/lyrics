@@ -3,115 +3,88 @@ var lyricsdata;
 
 var beatles = new Array();
 
-function initialize(){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          
-            console.log(xhttp.responseText);
+function initialize() {
 
-            var carousel = document.getElementById('my-keen-slider');
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            var carousel = document.getElementById('bandpics');
+
+            var picset = [];
 
             timelinedata = JSON.parse(xhttp.response);
 
-            timelinedata.forEach(function(item){
-
+            timelinedata.forEach(function (item) {
                 beatles[item.order] = item;
-
-                var slide = document.createElement('div');
-                slide.className = 'keen-slider__slide';
-
-                var pic = document.createElement('bandpic-element');
-                pic.setAttribute('image', './images/SVG/'+ item.image);
-                pic.image = './images/SVG/'+ item.image;
-
-                slide.appendChild(pic);
-                carousel.appendChild(slide);
+                picset.push('./images/SVG/' + item.image);
             })
 
-            var slider = new KeenSlider('#my-keen-slider', {
-                loop: true,
-                autoHeight:true,
-                created: function(instance) {
-                    var dots_wrapper = document.getElementById("dots");
-                    var slides = document.querySelectorAll(".keen-slider__slide");
-                    slides.forEach(function(t, idx) {
-                      var dot = document.createElement("button");
-                      dot.classList.add("dot");
-                      dots_wrapper.appendChild(dot);
-                      dot.addEventListener("click", function() {
-                        instance.moveToSlide(idx);
-                      });
-                    });
-                    updateClasses(instance);
+            carousel.setAttribute('bandpics', picset);
 
-                    var index = instance.details().relativeSlide + 1;
-                    updateBars(index);
-                },
-                slideChanged(instance) {
+            document.addEventListener('ERACHANGE', e => {
 
-                    var index = instance.details().relativeSlide +1;
+                console.log(e.detail.eventData.era);
+                var index = e.detail.eventData.era;
 
-                    timelinedata.forEach(function(item){
+                updateBars(index + 1);
+                updateAlbums(index + 1);
+                updateBlurb(index + 1);
 
-                        if(item.order === index){
-                            var string = item.era + ' : ' + item.start + ' - ' + item.end;
-                            var eralabel = document.getElementById('eralabel');
-                            eralabel.innerHTML = string;
-
-                            var moodlabel = document.getElementById('moodlabel');
-                            moodlabel.innerHTML = item.mood;
-
-                            var blurb = document.getElementById('blurb');
-                            blurb.innerHTML = "";
-
-                            item.albums.forEach(function(album){
-                                album.background.forEach(function(info){
-                                    var paragraph = document.createElement('div');
-                                    paragraph.className = 'snippet';
-                                    paragraph.innerHTML = info;
-                                    blurb.appendChild(paragraph);
-                                })
-                            })
-
-
-
-                            var container = document.getElementById('blurb');
-                            container.className = 'blurb';
-                            container.className = container.className + ' ' + item.className;
-
-                            console.log(string)
-                        }
-
-                    })
-
-                    updateClasses(instance);
-                    updateBars(index);
-                    updateAlbums(index);
-                }
             })
+
+            updateBlurb(1);
+            updateBars(1);
+            updateAlbums(1);
         }
+
     };
     xhttp.open("GET", "./data/mac.json", true);
     xhttp.send();
 }
 
-function updateBars(index){
+function updateBlurb(index) {
+
+    var item = beatles[index];
+    var string = item.era + ' : ' + item.start + ' - ' + item.end;
+    // var eralabel = document.getElementById('eralabel');
+    // eralabel.innerHTML = string;
+
+    var moodlabel = document.getElementById('moodlabel');
+    moodlabel.innerHTML = item.mood;
+
+    var blurb = document.getElementById('blurb');
+    blurb.innerHTML = "";
+
+    item.albums.forEach(function (album) {
+        album.background.forEach(function (info) {
+            var paragraph = document.createElement('div');
+            paragraph.className = 'snippet';
+            paragraph.innerHTML = info;
+            blurb.appendChild(paragraph);
+        })
+    })
+
+    var container = document.getElementById('blurb');
+    container.className = 'blurb';
+    container.className = container.className + ' ' + item.className;
+
+    console.log(string)
+}
+
+function updateBars(index) {
 
     console.log('UPDATE BARS');
 
     console.log(beatles[index].era);
-
-    beatles[index].analysis.personality.forEach(function(datapoint){
-
+    beatles[index].analysis.personality.forEach(function (datapoint) {
         var point = document.getElementById(datapoint.name);
-
-        var value = Math.round( datapoint.percentile * 100 );
+        var value = Math.round(datapoint.percentile * 100);
         point.setAttribute('value', value);
     })
 }
 
-function updateAlbums(index){
+function updateAlbums(index) {
     console.log('UPDATE ALBUMS');
 
     console.log(beatles[index].albums);
@@ -119,8 +92,8 @@ function updateAlbums(index){
     var tracklist = document.getElementById('tracklist');
     tracklist.innerHTML = "";
 
-    beatles[index].albums.forEach(function(album){
-    
+    beatles[index].albums.forEach(function (album) {
+
         var section = document.createElement("section");
         section.className = "album";
 
@@ -141,7 +114,7 @@ function updateAlbums(index){
         var tracks = document.createElement("ul");
         tracks.className = "tracks";
 
-        album.songs.forEach(function(track){
+        album.songs.forEach(function (track) {
             var song = document.createElement("li");
             song.className = "track";
             song.innerHTML = track;
@@ -160,19 +133,10 @@ function updateAlbums(index){
 
 function updateClasses(instance) {
     var slide = instance.details().relativeSlide;
-    // var arrowLeft = document.getElementById("arrow-left");
-    // var arrowRight = document.getElementById("arrow-right");
-    // slide === 0
-    //   ? arrowLeft.classList.add("arrow--disabled")
-    //   : arrowLeft.classList.remove("arrow--disabled");
-    // slide === instance.details().size - 1
-    //   ? arrowRight.classList.add("arrow--disabled")
-    //   : arrowRight.classList.remove("arrow--disabled");
-
     var dots = document.querySelectorAll(".dot");
-    dots.forEach(function(dot, idx) {
-      idx === slide
-        ? dot.classList.add("dot--active")
-        : dot.classList.remove("dot--active");
+    dots.forEach(function (dot, idx) {
+        idx === slide ?
+            dot.classList.add("dot--active") :
+            dot.classList.remove("dot--active");
     });
-  }
+}
