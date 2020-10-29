@@ -12,15 +12,19 @@ function initialize() {
             var carousel = document.getElementById('bandpics');
 
             var picset = [];
+            var labels = [];
 
             timelinedata = JSON.parse(xhttp.response);
 
             timelinedata.forEach(function (item) {
                 beatles[item.order] = item;
                 picset.push('./images/SVG/' + item.image);
+                var string = item.era + ' : ' + item.start + ' - ' + item.end;
+                labels.push(string);
             })
 
             carousel.setAttribute('bandpics', picset);
+            carousel.setAttribute('labels', labels);
 
             document.addEventListener('ERACHANGE', e => {
 

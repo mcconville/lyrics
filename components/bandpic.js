@@ -10,6 +10,8 @@ class Bandpic extends HTMLElement {
         // let template = document.getElementById('bandpic');
         let templateContent = '<div></div>';
 
+        this.labels = [];
+
         const shadow = this.attachShadow({
             mode: 'open'
         })
@@ -51,6 +53,9 @@ class Bandpic extends HTMLElement {
     reselect() {
         console.log(this);
         console.log('reselect: ' + this.currentSlide);
+        var sr = this.component.shadowRoot;
+        var eralabel = sr.getElementById('eralabel');
+        eralabel.innerHTML = this.component.labels[this.currentSlide];
 
         var customEvent = new CustomEvent('ERACHANGE', {
             detail: {
@@ -65,6 +70,14 @@ class Bandpic extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         console.log('IMAGES CHANGED');
+
+        if(name == 'labels'){
+            console.log('labels');
+            this.labels = newValue.split(",");
+            var sr = this.shadowRoot;
+            var eralabel = sr.getElementById('eralabel');
+            eralabel.innerHTML = this.labels[0];
+        }
 
         if (name == 'bandpics') {
 
@@ -90,6 +103,8 @@ class Bandpic extends HTMLElement {
                 startIndex: 0,
                 onChange: this.reselect
             });
+
+            Siema.prototype.component = this;
 
             Siema.prototype.addPagination = function () {
                 for (let i = 0; i < this.innerElements.length; i++) {
