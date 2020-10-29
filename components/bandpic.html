@@ -41,6 +41,33 @@
         text-transform: uppercase;
     }
 
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dot {
+        margin: 10px;
+        height: 12px;
+        width: 12px;
+        border-radius: 12px;
+        border: none;
+        background: #EDF1FE;
+        outline:0;
+    }
+
+    .selectedDot{
+        margin: 10px;
+        height: 12px;
+        width: 12px;
+        border-radius: 12px;
+        border: none;
+        background:#6B5876 ;
+        outline:0;
+    }
+
 
     @media (min-width: 320px) and (max-width: 480px) {
         .bandpics {
@@ -110,15 +137,8 @@
         <section class="beatles">
             <label id="eralabel" class="headinglabel">Psychedelia: 1967 - 1969</label>
         </section>
-        <div id="siema" class="siema">
-            <!-- <div><img src="images/SVG/blueslidepark.svg"></div>
-            <div><img src="images/SVG/divinefeminine.svg"></div>
-            <div><img src="images/SVG/goodam.svg"></div>
-            <div><img src="images/SVG/swimming.svg"></div>
-            <div><img src="images/SVG/circles.svg"></div> -->
-        </div>
-        <!-- <div id="my-keen-slider" class="keen-slider"></div>
-        <div id="dots" class="dots"></div> -->
+        <div id="siema" class="siema"></div>
+        <div id="buttons" class="buttons"></div>
     </section>
 </div>
 <!-- /template -->

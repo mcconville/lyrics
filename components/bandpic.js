@@ -36,26 +36,34 @@ class Bandpic extends HTMLElement {
             loop: true
         });
 
-        // Siema.prototype.addPagination = function () {
-        //     for (let i = 0; i < this.innerElements.length; i++) {
-        //         const btn = document.createElement('button');
-        //         btn.textContent = i;
-        //         btn.addEventListener('click', () => this.goTo(i));
-        //         this.selector.appendChild(btn);
-        //     }
-        // }
-
-        // this.siema.addPagination();
-
         console.log('ADDING BANDPIC');
     }
 
     reselect() {
-        console.log(this);
-        console.log('reselect: ' + this.currentSlide);
         var sr = this.component.shadowRoot;
         var eralabel = sr.getElementById('eralabel');
         eralabel.innerHTML = this.component.labels[this.currentSlide];
+
+        var buttons = sr.getElementById('buttons');
+
+        var selectedSlide = this.currentSlide;
+
+        buttons.childNodes.forEach(function (node) {
+
+            if (node.id == 'button' + selectedSlide) {
+                node.className = 'selectedDot';
+            } else {
+                node.className = 'dot';
+            }
+        })
+
+        // for( var b=0; b< buttonList.length; b++ ){
+        //     if(buttonList[b].id == this.currentSlide-1){
+        //         buttonList[b].id.className = 'selectedDot';
+        //     }else{
+        //         buttonList[b].id.className = 'dot';
+        //     }
+        // }
 
         var customEvent = new CustomEvent('ERACHANGE', {
             detail: {
@@ -71,7 +79,7 @@ class Bandpic extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         console.log('IMAGES CHANGED');
 
-        if(name == 'labels'){
+        if (name == 'labels') {
             console.log('labels');
             this.labels = newValue.split(",");
             var sr = this.shadowRoot;
@@ -83,6 +91,8 @@ class Bandpic extends HTMLElement {
 
             var sr = this.shadowRoot;
             var anchor = sr.getElementById('siema');
+            var buttons = sr.getElementById('buttons');
+
             anchor.innerHTML = "";
 
             var picarray = newValue.split(",");
@@ -109,9 +119,15 @@ class Bandpic extends HTMLElement {
             Siema.prototype.addPagination = function () {
                 for (let i = 0; i < this.innerElements.length; i++) {
                     const btn = document.createElement('button');
-                    btn.textContent = i;
+                    // btn.textContent = i;
                     btn.addEventListener('click', () => this.goTo(i));
-                    this.selector.appendChild(btn);
+                    if (i == 0) {
+                        btn.className = "selectedDot";
+                    } else {
+                        btn.className = "dot";
+                    }
+                    btn.id = "button" + i;
+                    buttons.appendChild(btn);
                 }
             }
 
