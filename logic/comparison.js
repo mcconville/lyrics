@@ -149,22 +149,41 @@ function buildLineData(data, color) {
   return lineData;
 }
 
+
 function addChart(anchor, data) {
+
+  var portrait = window.matchMedia("(min-width: 320px) and (max-width: 480px)");
+  var iphonex = window.matchMedia("(min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3)");
+
   var openness = document.getElementById(anchor);
 
   openness.innerHTML = "";
 
   var opennessChart = document.createElement('canvas');
 
-  if (mode === "time") {
-    opennessChart.height = 300;
-    openness.style.height = '300px';
-  } else {
-    opennessChart.height = 400;
-    openness.style.height = '400px';
+  var chartwidth = 300;
+  var chartheight = 300;
+
+  if (portrait.matches) {
+    chartwidth = 700;
+    chartheight = 700;
+    console.log('mobile portrait mode');
   }
 
-  opennessChart.width = 400;
+  if (iphonex.matches) {
+    chartwidth = 700;
+    chartheight = 700;
+    console.log('iphonex mode');
+  }
+
+  opennessChart.height = chartheight;
+  // openness.style.height = chartheight + 'px';
+  opennessChart.width = chartwidth;
+  // openness.style.width = chartwidth + 'px';
+
+
+  // opennessChart.width = 400;
+
 
   openness.appendChild(opennessChart);
 
@@ -332,7 +351,7 @@ function readCombinedData() {
               break;
           }
         });
-        
+
         personaCount++;
       })
 
@@ -345,7 +364,7 @@ function readCombinedData() {
 }
 
 function readPersonaData() {
-  var url = './data/timeline.json';
+  var url = './data/mac.json';
 
   var xmlhttp = new XMLHttpRequest();
 
