@@ -9,23 +9,23 @@ class Bandpic extends HTMLElement {
         // let template = document.getElementById('bandpic');
         let templateContent = '<div></div>';
         this.labels = [];
+        this.datapath = "";
         const shadow = this.attachShadow({
             mode: 'open'
         })
+
     }
 
     async connectedCallback() {
-
         let res = await fetch('https://mcconville.github.io/lyrics/components/bandpic.html')
         // let res = await fetch('./components/bandpic.html')
-
         var sr = this.shadowRoot;
         sr.innerHTML = await res.text();
         this.readLyricsData();
     }
 
     async readLyricsData() {
-        let analysis = await fetch('./data/mac.json');
+        let analysis = await fetch(this.datapath);
         this.lyricsdata = await analysis.text();
         console.log('ADDING BANDPIC');
 
@@ -102,6 +102,13 @@ class Bandpic extends HTMLElement {
             bubbles: true
         });
         document.dispatchEvent(customEvent);
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if( name=="url" ){
+            console.log( newValue );
+            this.datapath = newValue;
+        }
     }
 }
 

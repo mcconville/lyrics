@@ -120,14 +120,3 @@ function updateAlbums(index) {
         tracklist.appendChild(section);
     })
 }
-
-
-function updateClasses(instance) {
-    var slide = instance.details().relativeSlide;
-    var dots = document.querySelectorAll(".dot");
-    dots.forEach(function (dot, idx) {
-        idx === slide ?
-            dot.classList.add("dot--active") :
-            dot.classList.remove("dot--active");
-    });
-}
