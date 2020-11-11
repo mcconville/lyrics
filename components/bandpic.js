@@ -13,7 +13,6 @@ class Bandpic extends HTMLElement {
         const shadow = this.attachShadow({
             mode: 'open'
         })
-
     }
 
     async connectedCallback() {
@@ -36,9 +35,9 @@ class Bandpic extends HTMLElement {
         var anchor = sr.getElementById('siema');
         var buttons = sr.getElementById('buttons');
 
-        timelinedata = JSON.parse(this.lyricsdata);
+        this.timelinedata = JSON.parse(this.lyricsdata);
 
-        timelinedata.forEach(function (item) {
+        this.timelinedata.forEach(function (item) {
             picset.push('./images/SVG/' + item.image);
             var string = item.era + ' : ' + item.start + ' - ' + item.end;
             labels.push(string);

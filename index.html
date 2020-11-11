@@ -1,34 +1,28 @@
 <html>
+
 <head>
     <title>Mac Miller lyric analysis | Psychology of lyrics</title>
-    <!-- <link rel="stylesheet" href="./style/style.css"> -->
     <link rel="stylesheet" href="./style/style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <script src="./logic/logic.js"></script>
 </head>
 
 <body>
     <div id="container" class="container">
-        <section class="banner">
-            <div class="wrap">
-                <img class="logo" src="./images/SVG/logo.svg"></img>
-                <div class="lyricsanalysis">LYRICS PSYCHOLOGY</div>
-            </div>
-            <div class="links">
-                <a class="link" href="comparison.html">COMPARISON</a>
-                <a class="link" href="">ABOUT</a>
-            </div>
-        </section>
+        <banner-element id="banner"></banner-element>
         <div class="frame">
             <bandpic-element id="bandpics" url="https://mcconville.github.io/macmiller/data/mac.json"></bandpic-element>
-            <datapanel-element id="datapanel" url="https://mcconville.github.io/macmiller/data/mac.json"></datapanel-element>
-            <blurb-element id="albumblurb" dom="./components/blurb.html" url="https://mcconville.github.io/macmiller/data/mac.json"></blurb-element>
-            <albums-element id="albumpanel" dom="./components/albums.html" url="https://mcconville.github.io/macmiller/data/mac.json"></albums-element>
+            <datapanel-element id="datapanel" dom="./components/datapanel.html"
+                url="https://mcconville.github.io/macmiller/data/mac.json"></datapanel-element>
+            <blurb-element id="albumblurb" dom="./components/blurb.html"
+                url="https://mcconville.github.io/macmiller/data/mac.json"></blurb-element>
+            <albums-element id="albumpanel" dom="./components/albums.html"
+                url="https://mcconville.github.io/macmiller/data/mac.json"></albums-element>
         </div>
     </div>
 </body>
+<script src="./components/banner.js"></script>
 <script src="./components/lyricselement.js"></script>
 <script src="./logic/siema.js"></script>
 <script src="./components/bandpic.js"></script>
