@@ -1,0 +1,79 @@
+<!-- template -->
+<style>
+    .traitsection {
+        display: flex;
+        flex-direction: column;
+        width: 485;
+        background: white;
+    }
+
+    .heading {
+        display: flex;
+        flex-direction: row;
+        background: var(--lyrics-analysis-secondary-color);
+        width: 100%;
+        height: 30px;
+        align-content: center;
+        /* margin-top: 40px; */
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .headinglabel {
+        margin-left: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--lyrics-analysis-ink-color);
+        text-transform: uppercase;
+    }
+
+    .blurb {
+        border: 1px dotted var(--lyrics-analysis-secondary-color);
+        width: 100%;
+        height: 500px;
+        margin-top: 20px;
+    }
+
+    .snippet {
+        font-size: 12px;
+        margin: 20px;
+        line-height: 16px;
+
+    }
+
+    .moodlabel {
+        margin-left: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--lyrics-analysis-ink-color);
+        text-transform: uppercase;
+        color: var(--lyrics-analysis-score-color);
+    }
+
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+
+        .heading {
+            height: 120px;
+        }
+
+
+        .headinglabel {
+            margin-left: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--lyrics-analysis-ink-color);
+            text-transform: uppercase;
+        }
+    }
+</style>
+<div>
+    <section class="heading">
+        <label id="headinglabel" class="headinglabel">BACKGROUND</label>
+    </section>
+    <section class="background">
+        <label id="moodlabel" class="moodlabel"></label>
+        <section class="blurb" id="blurb"></section>
+    </section>
+</div>
+<!-- template -->

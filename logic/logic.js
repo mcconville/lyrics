@@ -16,63 +16,17 @@ function initialize() {
             })
 
             document.addEventListener('ERACHANGE', e => {
-
                 console.log(e.detail.eventData.era);
                 var index = e.detail.eventData.era;
-
-                updateBars(index + 1);
-                updateAlbums(index + 1);
-                updateBlurb(index + 1);
-
+                // updateAlbums(index + 1);
             })
 
-            updateBlurb(1);
-            updateBars(1);
-            updateAlbums(1);
+            // updateAlbums(1);
         }
 
     };
     xhttp.open("GET", "./data/mac.json", true);
     xhttp.send();
-}
-
-function updateBlurb(index) {
-
-    var item = beatles[index];
-    var string = item.era + ' : ' + item.start + ' - ' + item.end;
-
-    var moodlabel = document.getElementById('moodlabel');
-    moodlabel.innerHTML = item.mood;
-
-    var blurb = document.getElementById('blurb');
-    blurb.innerHTML = "";
-
-    item.albums.forEach(function (album) {
-        album.background.forEach(function (info) {
-            var paragraph = document.createElement('div');
-            paragraph.className = 'snippet';
-            paragraph.innerHTML = info;
-            blurb.appendChild(paragraph);
-        })
-    })
-
-    var container = document.getElementById('blurb');
-    container.className = 'blurb';
-    container.className = container.className + ' ' + item.className;
-
-    console.log(string)
-}
-
-function updateBars(index) {
-
-    console.log('UPDATE BARS');
-
-    console.log(beatles[index].era);
-    beatles[index].analysis.personality.forEach(function (datapoint) {
-        var point = document.getElementById(datapoint.name);
-        var value = Math.round(datapoint.percentile * 100);
-        point.setAttribute('value', value);
-    })
 }
 
 function updateAlbums(index) {

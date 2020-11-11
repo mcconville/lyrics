@@ -16,7 +16,6 @@ class Datablock extends HTMLElement {
 
     async connectedCallback(){
 
-
         let res = await fetch( './components/datablock.html' )
 
         // let res = await fetch( 'https://mcconville.github.io/lyrics/components/datablock.html' )

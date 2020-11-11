@@ -1,18 +1,15 @@
 <html>
-
 <head>
     <title>Mac Miller lyric analysis | Psychology of lyrics</title>
     <!-- <link rel="stylesheet" href="./style/style.css"> -->
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@4.1.3/keen-slider.min.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
     <script src="./logic/logic.js"></script>
-    
 </head>
 
-<body onload="initialize()">
+<body>
     <div id="container" class="container">
         <section class="banner">
             <div class="wrap">
@@ -25,47 +22,19 @@
             </div>
         </section>
         <div class="frame">
-
             <bandpic-element id="bandpics" url="https://mcconville.github.io/macmiller/data/mac.json"></bandpic-element>
-           
-            <div class="traitsection">
-                <section class="heading">
-                    <label class="headinglabel">Big 5 Psychology Traits </label>
-                </section>
-                <section class="data">
-                    <datablock-element id='Openness' trait="OPENNESS" value=56></datablock-element>
-                    <datablock-element id='Conscientiousness' trait="CONSCIENCIOUSNESS" value=42></datablock-element>
-                    </datablock-element>
-                    <datablock-element id='Extraversion' trait="EXTRAVERSION" value=79></datablock-element>
-                    </datablock-element>
-                    <datablock-element id='Agreeableness' trait="AGREEABLENESS" value=64></datablock-element>
-                    </datablock-element>
-                    <datablock-element id='Emotional range' trait="EMOTIONAL RANGE" value=88></datablock-element>
-                    </datablock-element>
-                </section>
-
-            </div>
-            <div>
-                <section class="heading">
-                    <label id="headinglabel" class="headinglabel">BACKGROUND</label>
-                </section>
-                <section class="background">
-                    <label id="moodlabel" class="moodlabel"></label>
-                    <section class="blurb" id="blurb"></section>
-                </section>
-            </div>
-            <div class=traitsection>
-                <section class="heading">
-                    <label class="headinglabel">Albums</label>
-                </section>
-                <section class="tracklist" id="tracklist">
-                </section>
-            </div>
+            <datapanel-element id="datapanel" url="https://mcconville.github.io/macmiller/data/mac.json"></datapanel-element>
+            <blurb-element id="albumblurb" dom="./components/blurb.html" url="https://mcconville.github.io/macmiller/data/mac.json"></blurb-element>
+            <albums-element id="albumpanel" dom="./components/albums.html" url="https://mcconville.github.io/macmiller/data/mac.json"></albums-element>
         </div>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/keen-slider@4.1.3/keen-slider.min.js"></script>
+<script src="./components/lyricselement.js"></script>
+<script src="./logic/siema.js"></script>
 <script src="./components/bandpic.js"></script>
 <script src="./components/datablock.js"></script>
-<script src="./logic/siema.js"></script>
+<script src="./components/datapanel.js"></script>
+<script src="./components/blurb.js"></script>
+<script src="./components/albums.js"></script>
+
 </html>

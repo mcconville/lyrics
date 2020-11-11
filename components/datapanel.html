@@ -1,0 +1,63 @@
+<!-- template -->
+<style>
+    .traitsection {
+        display: flex;
+        flex-direction: column;
+        width: 485;
+        background: white;
+    }
+
+    .heading {
+        display: flex;
+        flex-direction: row;
+        background: var(--lyrics-analysis-secondary-color);
+        width: 100%;
+        height: 30px;
+        align-content: center;
+        /* margin-top: 40px; */
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .headinglabel {
+        margin-left: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--lyrics-analysis-ink-color);
+        text-transform: uppercase;
+    }
+
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+
+        .heading {
+            height: 120px;
+        }
+
+
+        .headinglabel {
+            margin-left: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--lyrics-analysis-ink-color);
+            text-transform: uppercase;
+        }
+    }
+</style>
+<div class="traitsection">
+    <section class="heading">
+        <label class="headinglabel">Big 5 Psychology Traits </label>
+    </section>
+    <section class="data">
+        <datablock-element id='Openness' trait="OPENNESS" value=56></datablock-element>
+        <datablock-element id='Conscientiousness' trait="CONSCIENCIOUSNESS" value=42></datablock-element>
+        </datablock-element>
+        <datablock-element id='Extraversion' trait="EXTRAVERSION" value=79></datablock-element>
+        </datablock-element>
+        <datablock-element id='Agreeableness' trait="AGREEABLENESS" value=64></datablock-element>
+        </datablock-element>
+        <datablock-element id='Emotional range' trait="EMOTIONAL RANGE" value=88></datablock-element>
+        </datablock-element>
+    </section>
+</div>
+<!-- template -->
