@@ -7,7 +7,7 @@ class Banner extends HTMLElement {
         super();
 
         let templateContent = '<div></div>';
-        this.dompath = './components/banner.html';
+        this.dompath = 'https://mcconville.github.io/lyrics/components/banner.html';
         const shadow = this.attachShadow({
                 mode: 'open'
         })
