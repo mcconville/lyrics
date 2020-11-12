@@ -27,6 +27,24 @@
         text-transform: uppercase;
     }
 
+    @media (min-width: 320px) and (max-width: 480px) {
+        .heading {
+            height: 120px;
+        }
+
+
+        .headinglabel {
+            margin-left: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--lyrics-analysis-ink-color);
+            text-transform: uppercase;
+        }
+
+        .traitsection {
+            width: 100%;
+        }
+    }
 
     @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
 
@@ -41,6 +59,10 @@
             font-weight: bold;
             color: var(--lyrics-analysis-ink-color);
             text-transform: uppercase;
+        }
+
+        .traitsection {
+            width: 100%;
         }
     }
 </style>
