@@ -17,6 +17,8 @@ body{
     /* font-family: 'IBM Plex Sans', sans-serif; */
 }
 
+
+
 .container{
     padding: 0;
     margin: 0;
@@ -158,6 +160,14 @@ padding-left: 20px;
     margin-left:20px;
 }
 
+.banner-element {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    align-items: center;
+}
+
 .frame{
     display: grid;
     flex-direction: row;
@@ -248,14 +258,20 @@ padding-left: 20px;
 }
 
 
-
-
 /* 
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+
+    .banner-element {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
     .container{
         font-size: 24px;  
     }    
@@ -344,6 +360,13 @@ padding-left: 20px;
   and (min-device-width: 375px) 
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
+
+    .banner-element {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
 
     .container{
         font-size: 26px;

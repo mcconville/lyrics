@@ -50,6 +50,13 @@
         height: 20px;
     }
 
+    .tracklist {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
     .tracks {
         list-style-type: none;
         padding-left: 0;
@@ -61,6 +68,37 @@
         font-size: 10px;
         color: #a69aac;
         line-height: 14px;
+    }
+
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        .heading {
+            height: 120px;
+        }
+
+        .headinglabel {
+            margin-left: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--lyrics-analysis-ink-color);
+            text-transform: uppercase;
+        }
+    }
+
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+
+        .heading {
+            height: 120px;
+        }
+
+        .headinglabel {
+            margin-left: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--lyrics-analysis-ink-color);
+            text-transform: uppercase;
+        }
     }
 </style>
 <div>

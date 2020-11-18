@@ -1,7 +1,7 @@
 <!-- template -->
 <style>
     .banner {
-        /* display: flex;
+        display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
@@ -11,7 +11,7 @@
         font-weight: bold;
         width: 1000px;
         padding-bottom: 30px;
-        font-size: 16px; */
+        font-size: 16px;
     }
 
     .wrap {
@@ -39,6 +39,75 @@
 
     .logo {
         width: 100px;
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+
+        .banner-element {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .element {
+            width: 100%;
+        }
+
+        .banner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin: 30px;
+            margin-bottom: 0;
+            font-weight: bold;
+            padding-bottom: 30px;
+            font-size: 30px;
+
+            width: auto;
+        }
+
+        .logo {
+            width: 210px;
+        }
+    }
+
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+
+        .element {
+            width: 100%;
+        }
+
+        .banner-element {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin: 30px;
+            margin-bottom: 0;
+            font-weight: bold;
+            padding-bottom: 30px;
+            font-size: 30px;
+
+            width: auto;
+        }
+
+
+        .logo {
+            width: 210px;
+        }
+
     }
 </style>
 <section class="banner">
