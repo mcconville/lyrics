@@ -48,6 +48,10 @@ class Bandpic extends HTMLElement {
             anchor.appendChild(d);
         })
 
+        this.labels = labels;
+        var eralabel = sr.getElementById('eralabel');
+        eralabel.innerHTML = this.labels[0];
+
         this.siema = new Siema({
             selector: anchor,
             loop: true,
