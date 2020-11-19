@@ -456,7 +456,7 @@ div#carousel {
   color: #19558f;
 }
 
-.onoffswitch-inner: after {
+.onoffswitch-inner:after {
   content: "by persona";
   padding-right: 10px;
   background-color: #1CAFF6;
