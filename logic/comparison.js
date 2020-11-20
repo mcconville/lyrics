@@ -10,7 +10,6 @@ var orange = [255, 199, 102]; // [243, 119, 107];
 
 var black = [25, 85, 143];
 
-
 var openness = [];
 var conscientiousness = [];
 var agreeableness = [];
@@ -70,9 +69,6 @@ function process(persona, factor, collection) {
       'value': trait.percentile.toFixed(2) * 100
     };
 
-    // console.log('trait.name: ' + trait.name);
-    // console.log('traitdata: ' + traitdata);
-
     if (subfactors[trait.name] != undefined) {
 
       subfactors[trait.name].push(traitdata);
@@ -99,8 +95,6 @@ function compare(a, b) {
 
 function orderData(data) {
 
-  // console.log(data);
-
   var sorted = data.sort(compare);
 
   var sortedCount = 0;
@@ -118,13 +112,12 @@ function orderData(data) {
     console.log(personas[labelcount]);
 
     if (mode === "time") {
-
       if (labelcount < 9) {
         orderedData.labels[sortedCount] = personas[labelcount].start;
       }
     } else {
       if (labelcount < 9) {
-        orderedData.labels[sortedCount] = personas[labelcount].era;
+        orderedData.labels[sortedCount] = personas[labelcount].era.substring(0, 18);
       }
     }
 
@@ -140,8 +133,6 @@ function buildLineData(data, color) {
   var ordered = orderData(data);
 
   var lineData = basicLineChart(color);
-
-  // console.log(ordered.labels)
 
   lineData.labels = ordered.labels;
   lineData.datasets[0].data = ordered.data;
@@ -177,9 +168,9 @@ function addChart(anchor, data) {
   }
 
   opennessChart.height = chartheight;
-  // openness.style.height = chartheight + 'px';
+  openness.style.height = chartheight + 'px';
   opennessChart.width = chartwidth;
-  // openness.style.width = chartwidth + 'px';
+  openness.style.width = chartwidth + 'px';
 
 
   // opennessChart.width = 400;
@@ -248,8 +239,6 @@ function addOption(select, name) {
 }
 
 function buildPicker(factor) {
-
-  // console.log('Factor: ' + factor.name);
 
   factor.children.forEach(function (name) {
 
