@@ -1,194 +1,195 @@
 <!-- template id="datablock" -->
-    <style>
-        .datablock {
+<style>
+    .datablock {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+
+    .infostrip {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 98%;
+    }
+
+    .numberbar {
+        display: flex;
+        min-width: 80%;
+        max-width: 80%;
+        height: 6px;
+        margin: 10px;
+        margin-left: 20px;
+    }
+
+    .score {
+        width: 75%;
+        background: var(--lyrics-analysis-ink-color);
+        transition: width 1s ease;
+    }
+
+    .gap {
+        width: 25%;
+        background: var(--lyrics-analysis-gap-color);
+        transition: width 1s ease;
+    }
+
+    .percentage {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-width: 10%;
+        max-width: 10%;
+        font-size: 22px;
+        justify-content: flex-end;
+        color: var(--lyrics-analysis-ink-color);
+    }
+
+    .categorybar {
+        margin-top: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 98%;
+        align-items: center;
+    }
+
+    .categorylabel {
+        font-size: 12px;
+        /* font-weight: bold; */
+        margin-left: 20px;
+        color: var(--lyrics-analysis-ink-color);
+    }
+
+    .subcategory {
+        font-size: 10px;
+        /* font-weight: bold; */
+        text-transform: UPPERCASE;
+        width: 200px;
+        border: 1px solid var(--lyrics-analysis-secondary-color);
+        /* border-radius: 4px; */
+        padding: 5px;
+        background: white;
+        color: #a69aac;
+        -webkit-appearance: none;
+    }
+
+    select,
+    option {
+        color: var(--lyrics-analysis-score-color);
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .subcategorytext {
+        font-size: 30px;
+        /* font-weight: bold; */
+        text-transform: capitalize;
+        color: var(--lyrics-analysis-secondary-color) !important;
+
+    }
+
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        .numberbar {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 20px;
+            min-width: 80%;
+            max-width: 80%;
+            height: 20px;
+            margin: 20px;
         }
 
-        .infostrip {
+        .categorylabel {
+            font-size: 26px;
+            font-weight: bold;
+            margin-left: 0;
+            color: var(--lyrics-analysis-score-color);
+        }
+
+        .categorybar {
+            margin: 20px;
+            margin-top: 0;
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
+            width: 92%;
             align-items: center;
-            width: 98%;
         }
+
+        .percentage {
+            padding: 20px;
+            font-size: 40px;
+        }
+
+        .subcategory {
+            padding: 20px;
+        }
+    }
+
+    /* ----------- iPhone X ----------- */
+
+    /* Portrait and Landscape */
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
 
         .numberbar {
             display: flex;
             min-width: 80%;
             max-width: 80%;
-            height: 6px;
-            margin: 10px;
-            margin-left:20px;
+            height: 20px;
+            margin: 20px;
         }
 
-        .score {
-            width: 75%;
-            background: var(--lyrics-analysis-ink-color);
-            transition: width 1s ease;
-        }
-
-        .gap {
-            width: 25%;
-            background: var(--lyrics-analysis-gap-color);
-            transition: width 1s ease;
-        }
-
-        .percentage {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            min-width: 10%;
-            max-width: 10%;
-            font-size: 22px;
-            justify-content: flex-end;
-            color: var(--lyrics-analysis-ink-color);
+        .categorylabel {
+            font-size: 26px;
+            font-weight: bold;
+            margin-left: 0;
+            color: var(--lyrics-analysis-score-color);
         }
 
         .categorybar {
+            margin: 20px;
             margin-top: 0;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            width: 98%;
+            width: 92%;
             align-items: center;
         }
 
         .categorylabel {
-            font-size: 12px;
-            /* font-weight: bold; */
-            margin-left: 20px;
-            color: var(--lyrics-analysis-ink-color);
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--lyrics-analysis-score-color);
         }
 
         .subcategory {
-            font-size: 10px;
-            /* font-weight: bold; */
-            text-transform: UPPERCASE;
-            width: 200px;
-            border: 1px solid var(--lyrics-analysis-secondary-color);
-            /* border-radius: 4px; */
-            padding: 5px;
-            background: white;
-            color: #a69aac;
-            -webkit-appearance: none;
+            padding: 20px;
         }
 
-        select,
-        option {
-            color: var(--lyrics-analysis-score-color);
-            font-weight: bold;
-            text-align: right;
+        .percentage {
+            padding: 20px;
+            font-size: 40px;
         }
-
-        .subcategorytext {
-            font-size: 30px;
-            /* font-weight: bold; */
-            text-transform: capitalize;
-            color: var(--lyrics-analysis-secondary-color) !important;
-
-        }
-
-
-        @media (min-width: 320px) and (max-width: 480px) {
-            .numberbar {
-                display: flex;
-                min-width: 80%;
-                max-width: 80%;
-                height: 20px;
-                margin: 20px;
-            }
-
-            .categorylabel {
-                font-size: 26px;
-                font-weight: bold;
-                margin-left: 0;
-                color: var(--lyrics-analysis-score-color);
-            }
-
-            .categorybar {
-                margin: 20px;
-                margin-top: 0;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                width: 92%;
-                align-items: center;
-            }
-
-            .percentage {
-                padding: 20px;
-                font-size:40px;
-            }
-
-            .subcategory {
-                padding: 20px;
-            }
-        }
-
-        /* ----------- iPhone X ----------- */
-
-        /* Portrait and Landscape */
-        @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-
-            .numberbar {
-                display: flex;
-                min-width: 80%;
-                max-width: 80%;
-                height: 20px;
-                margin: 20px;
-            }
-
-            .categorylabel {
-                font-size: 26px;
-                font-weight: bold;
-                margin-left: 0;
-                color: var(--lyrics-analysis-score-color);
-            }
-
-            .categorybar {
-                margin: 20px;
-                margin-top: 0;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                width: 92%;
-                align-items: center;
-            }
-
-            .categorylabel {
-                font-size: 26px;
-                font-weight: bold;
-                color: var(--lyrics-analysis-score-color);
-            }
-
-            .subcategory {
-                padding: 20px;
-            }
-
-            .percentage {
-                padding: 20px;
-                font-size:40px;
-            }
-        }
-    </style>
-    <section class="datablock">
-        <div class="infostrip">
-            <div class="numberbar">
-                <div id="score" class="score"></div>
-                <div id="gap" class="gap"></div>
-            </div>
-            <div id="percentage" class="percentage"></div>
+    }
+</style>
+<section class="datablock">
+    <div class="infostrip">
+        <div class="numberbar">
+            <div id="score" class="score"></div>
+            <div id="gap" class="gap"></div>
         </div>
-        <div class="categorybar">
-            <label id="traitlabel" class="categorylabel"></label>
-            <!-- select dir="rtl" class="subcategory" name="bigfive" id="subcategory">
+        <div id="percentage" class="percentage"></div>
+    </div>
+    <div class="categorybar">
+        <label id="traitlabel" class="categorylabel"></label>
+        <!-- select dir="rtl" class="subcategory" name="bigfive" id="subcategory">
                 <option class="subcategorytext" value="something">subcategory</option>
                 <option class="subcategorytext" value="saab">Saab</option>
                 <option class="subcategorytext" value="mercedes">Mercedes</option>
                 <option class="subcategorytext" value="audi">Audi</option>
             </select -->
-        </div>
-    </section>
+    </div>
+</section>
 <!-- /template -->
