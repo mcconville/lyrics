@@ -31,7 +31,11 @@ The foundation for the lyrics project is a data structure describing the timelin
 
 ```
 
+### Data Mapping
 
+Here is how the JSON data maps to the responsive mobile view.
+
+![](./images/datamap.png)
 
 ### Practical Web Components
 
