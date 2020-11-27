@@ -28,6 +28,10 @@ In the past, web pages have been written with javascript, html and css code that
 
  Web Components aim to collect related javascript, style and DOM elements for a related element, and then allow the components to be placed, as custom DOM elements in a building block approach.
 
+ In recent years, a range of JavaScript libraries have appeared that enable developers to make componentized pieces. Two notable technologies are [React](https://reactjs.org/) and [Vue](https://vuejs.org/). These are more accepted and established approaches for teams to build with 'web components'.
+
+ For this lyrics project, I've chosen to work with the evolving world wide web open standard of Web Components, because I like that most browsers ship with the capability built in - I don't need to use an additional library, and for the most part, it is a minimal, yet powerful enough approach for me to achieve the solution I'm looking for.
+
 
 
 
