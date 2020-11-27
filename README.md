@@ -1,4 +1,4 @@
-# Toolkit For Big 5 Analysis of Artist's Song Writing Over Time 
+# Toolkit For Psychology of Artist's Song Writing
 
 This repository provides tools built around [Genius Lyrics](https://genius.com/) and [Watson Personality Insights](https://www.ibm.com/watson/services/personality-insights/) to create a template for analyzing the changes of an artist's song writing over the duration of their careers.
 
@@ -28,6 +28,6 @@ In the past, web pages have been written with javascript, html and css code that
 
  Web Components aim to collect related javascript, style and DOM elements for a related element, and then allow the components to be placed, as custom DOM elements in a building block approach.
 
- 
+
 
 
