@@ -20,6 +20,19 @@ You can see examples of the product of these tools here:
 In addition, the repo has a set of webcomponents that are capable of reading the complete json data file and presenting the data in a human readable way.
 
 
+### Data Structure
+
+The foundation for the lyrics project is a data structure describing the timeline of the artist involved. The first step is to figure out the eras of the artist. I've done this in one of two ways:
+
+- each album represents an era of the artist
+- an era of the artist consists of one or more albums
+
+```
+
+```
+
+
+
 ### Practical Web Components
 
 [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) are an open standard approach for modularizing and reusing user interface pieces on a page. 
