@@ -1,4 +1,4 @@
-# Toolkit For Psychology of Artist's Song Writing
+# Analyzing The Psychology of Artist's Song Writing
 
 This repository provides tools built around [Genius Lyrics](https://genius.com/) and [Watson Personality Insights](https://www.ibm.com/watson/services/personality-insights/) to create a template for analyzing the changes of an artist's song writing over the duration of their careers.
 
