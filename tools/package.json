@@ -8,9 +8,11 @@
   "dependencies": {
     "dotenv": "^2.0.0",
     "express": "^4.16.4",
+    "genius-lyrics-api": "^3.2.0",
     "ibm-watson": "latest",
+    "line-reader": "latest",
     "log4js": "^6.1.0",
-    "genius-lyrics-api": "3.0.3"
+    "musicmatch": "^0.3.2"
   },
   "repository": {},
   "engines": {

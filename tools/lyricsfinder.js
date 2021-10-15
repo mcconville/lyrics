@@ -26,6 +26,10 @@ function buildLyrics(songtitle, songdata, albumlyrics, albumdata ) {
     return albumlyrics;
 }
 
+function alert(song, thing){
+    console.log(song);
+}
+
 var timeline = require('./data/timeline.json');
 
 timeline.forEach(function (era) {
@@ -46,7 +50,7 @@ timeline.forEach(function (era) {
 
             gl.getSong(options).then((songdata) =>
                 eralyrics = buildLyrics(song, songdata, eralyrics, albumdata)
-            ).catch(err => alert(err));
+            ).catch(err => alert(songdata, err));
         })
     })
 });
