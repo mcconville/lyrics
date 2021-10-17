@@ -18,6 +18,8 @@ var neuroticism = [];
 
 var mode = "time";
 
+var datapath;
+
 var randomScalingFactor = function () {
   return Math.round(Math.random() * 100)
 };
@@ -291,7 +293,7 @@ function compareOrder(a, b) {
 
 function readCombinedData() {
 
-  var url = './data/mac.json';
+  var url = datapath;
 
   var xmlhttp = new XMLHttpRequest();
 
@@ -353,7 +355,7 @@ function readCombinedData() {
 }
 
 function readPersonaData() {
-  var url = './data/mac.json';
+  var url = datapath;
 
   var xmlhttp = new XMLHttpRequest();
 
@@ -418,6 +420,11 @@ function neuroticismTrait(e) {
   }
 }
 
-window.onload = function () {
+function initialize(path){
+  datapath = path;
   readPersonaData();
 }
+
+// window.onload = function () {
+//   readPersonaData();
+// }
