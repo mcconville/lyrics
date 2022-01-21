@@ -9,7 +9,7 @@
     "dotenv": "^2.0.0",
     "express": "^4.16.4",
     "ibm-watson": "latest",
-    "log4js": "^6.1.0",
+    "log4js": "^6.4.0",
     "genius-lyrics-api": "3.0.3"
   },
   "repository": {},
